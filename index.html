@@ -1,131 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Avni</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffff;
-    }
-    
-    .content-wrapper {
-      max-width: 600px;
-      margin: 50px auto;
-      padding: 0 30px;
-    }
-    
-    h1 {
-      color: #ff0a54;
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-
-    .typing-animation {
-      overflow: hidden;
-      display: inline-block;
-      vertical-align: bottom;
-      white-space: nowrap;
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Avni</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffff;
       }
-      to {
-        width: 100%;
+
+      .content-wrapper {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 0 30px;
       }
-    }
 
-    p {
-      line-height: 1.6;
-      color: #666;
-      margin-bottom: 10px;
-      text-align: left;
-    }
-    .highlight {
-      font-weight: bold;
-    }
-    .emoji {
-      font-size: 1.2em;
-      vertical-align: middle;
-    }
-    a {
-      color: #ff0a54;
-      text-decoration: none;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-    a:hover {
-      color: #ff0a54;
-      text-shadow: 0 0 5px rgba(255, 10, 84, 0.5), 0 0 10px rgba(255, 10, 84, 0.5), 0 0 15px rgba(255, 10, 84, 0.5);
-    }
-
-    .typing-animation::after {
-      content: "|";
-      display: inline-block;
-      vertical-align: bottom;
-      margin-left: 2px;
-      animation: blink-caret 1.4s step-end infinite;
-    }
-
-    @keyframes blink-caret {
-      from, to {
-        opacity: 1;
+      h1 {
+        color: #ff0a54;
+        text-align: center;
+        font-size: 3.5em;
+        margin-bottom: 20px;
       }
-      90% {
-        opacity: 0;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="content-wrapper">
-    <h1>
-      <span class="typing-animation"></span>
-    </h1>
-    <p>
-      i study <span class="highlight">computer science <span class="emoji">👩🏻‍💻</span> </span> at the
-      <span class="highlight">university of washington</span> 
-      with a minor in
-      <span class="highlight">gender, women and sexuality studies</span>.
-    </p>
-    <p>
-      my technical skills include, <span class="highlight">java</span>,
-      <span class="highlight">python</span>, html/css, react, and making mood boards on pinterest.
-    </p>
-    <p>
-      i am currently building a project called
-      <span class="highlight">confetti 🎉</span>.
-    </p>
-    <p>
-      check out my github projects at
-      <a href="https://github.com/avnirao" target="_blank">github</a>.
-    </p>
-    <p>
-      if you'd like to get in touch, you can do so by emailing
-      <a href="mailto:avnir@uw.edu">avnir@uw.edu</a> or reach out via
-      <a href="https://www.linkedin.com/in/avni-rao/" target="_blank">linkedin</a>.
-    </p>
-  </div>
 
-  <script>
-    const text = "hello, i'm avni";
-    const typingSpan = document.querySelector('.typing-animation');
-    let i = 0;
-    
-    function typeWriter() {
-      if (i < text.length) {
-        typingSpan.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, Math.random() + 90);
+      .typing-animation {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        white-space: nowrap;
       }
-    }
 
-    typeWriter();
-  </script>
-</body>
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      p {
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 10px;
+        text-align: left;
+        font-size: 1.3em;
+      }
+      .highlight {
+        font-weight: bold;
+      }
+      .emoji {
+        vertical-align: middle;
+      }
+      a {
+        color: #ff0a54;
+        text-decoration: none;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+      }
+      a:hover {
+        color: #ff0a54;
+        text-shadow: 0 0 5px rgba(255, 10, 84, 0.5),
+          0 0 10px rgba(255, 10, 84, 0.5), 0 0 15px rgba(255, 10, 84, 0.5);
+      }
+
+      .typing-animation::after {
+        content: "|";
+        display: inline-block;
+        vertical-align: bottom;
+        margin-left: 2px;
+        animation: blink-caret 1.4s step-end infinite;
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          opacity: 1;
+        }
+        90% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <h1>
+        <span class="typing-animation"></span>
+      </h1>
+      <p>
+        i study
+        <span class="highlight"
+          >computer science 👩🏻‍💻
+        </span>
+        at the
+        <span class="highlight">university of washington</span>
+        with a minor in
+        <span class="highlight">gender, women and sexuality studies</span>.
+      </p>
+      <p>
+        my technical skills include, <span class="highlight">java</span>,
+        <span class="highlight">python</span>, html/css, react, and making mood
+        boards on pinterest.
+      </p>
+      <p>
+        i am currently building a project called
+        <span class="highlight">confetti 🎉</span>.
+      </p>
+      <p>
+        check out my github projects at
+        <a href="https://github.com/avnirao" target="_blank">github</a>.
+      </p>
+      <p>
+        if you'd like to get in touch, you can do so by emailing
+        <a href="mailto:avnir@uw.edu">avnir@uw.edu</a> or reach out via
+        <a href="https://www.linkedin.com/in/avni-rao/" target="_blank"
+          >linkedin</a
+        >.
+      </p>
+    </div>
+
+    <script>
+      const text = "hello, i'm avni";
+      const typingSpan = document.querySelector(".typing-animation");
+      let i = 0;
+
+      function typeWriter() {
+        if (i < text.length) {
+          typingSpan.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, Math.random() + 90);
+        }
+      }
+
+      typeWriter();
+    </script>
+  </body>
 </html>
