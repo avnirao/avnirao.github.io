@@ -1,152 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Avni</title>
     <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #ffff;
-      }
-
-      .content-wrapper {
-        max-width: 600px;
-        margin: 50px auto;
-        padding: 0 30px;
-      }
-
-      h1 {
-        color: #ff0a54;
-        text-align: center;
-        font-size: 2.8em;
-        margin-bottom: 20px;
-      }
-
-      .typing-animation {
-        overflow: hidden;
-        display: inline-block;
-        vertical-align: bottom;
-        white-space: nowrap;
-      }
-
-      @keyframes typing {
-        from {
-          width: 0;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffff;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            color: #000;
         }
-        to {
-          width: 100%;
+
+        .content-wrapper {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 0 30px;
         }
-      }
 
-      p {
-        line-height: 1.6;
-        color: #666;
-        margin-bottom: 20px;
-        text-align: left;
-        font-size: 1em;
-      }
-
-      .highlight {
-        font-weight: bold;
-      }
-
-      .emoji {
-        vertical-align: middle;
-      }
-
-      a {
-        color: #ff0a54;
-        text-decoration: none;
-        transition: color 0.3s ease, text-shadow 0.3s ease;
-      }
-
-      a:hover {
-        color: #ff0a54;
-        text-shadow: 0 0 5px rgba(255, 10, 84, 0.5),
-          0 0 10px rgba(255, 10, 84, 0.5), 0 0 15px rgba(255, 10, 84, 0.5);
-      }
-
-      .typing-animation::after {
-        content: "|";
-        display: inline-block;
-        vertical-align: bottom;
-        margin-left: 2px;
-        animation: blink-caret 1.4s step-end infinite;
-      }
-
-      @keyframes blink-caret {
-        from,
-        to {
-          opacity: 1;
+        h1 {
+            color: #ff0a54;
+            text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 20px;
         }
-        90% {
-          opacity: 0;
-        }
-      }
 
-      .small-text {
-        text-align: center;
-        font-size: 0.8em;
-        color: #666;
-        margin-top: 50px;
-      }
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 1em;
+            color: #666;
+        }
+
+        .highlight1 {
+            font-weight: bold;
+            color: #666; 
+            text-decoration: none;
+            transition: text-shadow 0.3s ease;
+        }
+
+        .highlight {
+            color: #ff0a54;
+            font-weight: bold;
+            text-decoration: none;
+            transition: text-shadow 0.3s ease;
+        }
+
+        .highlight:hover {
+            text-shadow: 0 0 10px rgba(230, 62, 140, 0.5);
+        }
+
+        .small-text {
+            text-align: center;
+            font-size: 0.8em;
+            color: #222;
+            margin-top: 50px;
+        }
+
+        body.dark-mode p {
+            color: #f3e8ee;
+        }
+        body.dark-mode {
+            background-color: #222;
+            color: #f3e8ee;
+        }
+
+        body.dark-mode h1 {
+            color: #ff80ab;
+        }
+
+        body.dark-mode .content-wrapper {
+            color: #f4f4f6;
+        }
+
+        body.dark-mode .highlight1 {
+            color: #f4f4f6;
+        }
+
+        body.dark-mode .highlight {
+            color: #ff80ab;
+            font-weight: bold;
+        }
+
+        body.dark-mode .highlight:hover {
+            text-shadow: 0 0 10px rgba(230, 62, 140, 0.5);
+        }
+
+        body.dark-mode .small-text {
+            color: #bfbdc1;
+        }
+
+        .typing-animation::after {
+            color: #fff;
+            animation: blink-caret 1.4s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0;
+            }
+        }
+
+        .toggle-btn {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #ff0a54; 
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            position: fixed;
+            bottom: 140px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+        }
+
+        .toggle-btn:hover {
+            background-color: #ff0a54;
+            color: #fff;
+        }
+
+        .toggle-btn:focus {
+            outline: none;
+        }
     </style>
-  </head>
-  <body>
-    <div class="content-wrapper">
-      <h1>
+</head>
+<body>
+<div class="content-wrapper">
+    <h1>
         <span class="typing-animation"></span>
-      </h1>
-      <p>
+    </h1>
+    <p>
         i study
-        <span class="highlight">computer science 👩🏻‍💻 </span>
+        <span class="highlight1">computer science 👩🏻‍💻 </span>
         at the
-        <span class="highlight">university of washington</span>
+        <span class="highlight1">university of washington</span>
         with a minor in
-        <span class="highlight">gender, women and sexuality studies</span>.
-      </p>
-      <p>
-        my technical skills include, <span class="highlight">java</span>,
-        <span class="highlight">python</span>, html/css, react, and making mood
+        <span class="highlight1">gender, women and sexuality studies</span>.
+    </p>
+    <p>
+        my technical skills include, <span class="highlight1">java</span>,
+        <span class="highlight1">python</span>, html/css, react, and making mood
         boards on pinterest.
-      </p>
-      <p>
+    </p>
+    <p>
         i am currently building a project called
-        <span class="highlight">confetti 🎉</span> & participating in <a href="https://www.accenture.com/us-en" target="_blank">accenture's</a> work prep program. 
-      </p>
-      <p>
-        check out my github projects at
-        <a href="https://github.com/avnirao" target="_blank">github</a>.
-      </p>
-      <p>
+        <span class="highlight1">confetti 🎉</span> & participating in
+        <a href="https://www.accenture.com/us-en" target="_blank" class="highlight">accenture's</a>
+        work prep program.
+    </p>
+    <p>
+        check out my technical projects at
+        <a href="https://github.com/avnirao" target="_blank" class="highlight">github</a>
+        & my writings at
+        <a href="https://medium.com/@avnirao" target="_blank" class="highlight">medium</a>.
+    </p>
+    <p>
         if you'd like to get in touch, you can do so by emailing
-        <a href="mailto:avnir@uw.edu">avnir@uw.edu</a> or reach out via
-        <a href="https://www.linkedin.com/in/avni-rao/" target="_blank"
-          >linkedin</a
-        >.
-      </p>
-    </div>
+        <a href="mailto:avnir@uw.edu" class="highlight">avnir@uw.edu</a> or
+        reach out via
+        <a href="https://www.linkedin.com/in/avni-rao/" target="_blank" class="highlight">linkedin</a>.
+    </p>
+</div>
 
-    <div class="small-text">made by avni rao</div>
+<div class="small-text">made by avni rao</div>
 
-    <script>
-      const text = "hello, i'm avni";
-      const typingSpan = document.querySelector(".typing-animation");
-      let i = 0;
+<button onclick="toggleDarkMode()" class="toggle-btn">dark mode</button>
 
-      function typeWriter() {
+<script>
+    const text = "hello, i'm avni";
+    const typingSpan = document.querySelector(".typing-animation");
+    let i = 0;
+
+    function typeWriter() {
         if (i < text.length) {
-          typingSpan.textContent += text.charAt(i);
-          i++;
-          setTimeout(typeWriter, Math.random() + 90);
+            typingSpan.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, Math.random() + 90);
         }
-      }
+    }
 
-      typeWriter();
-    </script>
-  </body>
-</ht3
+    function toggleDarkMode() {
+        const body = document.body;
+        body.classList.toggle("dark-mode");
+        if (body.classList.contains("dark-mode")) {
+            document.querySelector(".toggle-btn").textContent = "light mode";
+            document.querySelector(".toggle-btn").style.backgroundColor = "#000";
+            document.querySelector(".toggle-btn").style.color = "#fff";
+            document.querySelector(".toggle-btn").style.borderColor = "#fff";
+        } else {
+            document.querySelector(".toggle-btn").textContent = "dark mode";
+            document.querySelector(".toggle-btn").style.backgroundColor = "#fff";
+            document.querySelector(".toggle-btn").style.color = "#000";
+            document.querySelector(".toggle-btn").style.borderColor = "#ff0a54";
+        }
+    }
+
+    typeWriter();
+</script>
+</body>
+</html>
