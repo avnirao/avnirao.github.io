@@ -59,12 +59,20 @@
         }
 
         a[href*="linkedin.com"].first-link:hover {
-            text-shadow: 0 0 10px rgba(0, 119, 181, 0.5); /* Blue hover shadow */
+            text-shadow: 0 0 10px rgba(0, 119, 181, 0.5); 
         }
 
-        /* Style for the second LinkedIn link */
+        /* Added styles for dark mode */
+        body.dark-mode a[href*="linkedin.com"].first-link {
+            color: #0077b5; /* Retain blue color in dark mode */
+        }
+
+        body.dark-mode a[href*="linkedin.com"].first-link:hover {
+            text-shadow: 0 0 10px rgba(0, 119, 181, 0.5); /* Retain hover effect in dark mode */
+        }
+
         a[href*="linkedin.com"].second-link {
-            color: #ff0a54; /* Change this color as desired */
+            color: #ff0a54; 
         }
 
         .small-text {
