@@ -55,12 +55,17 @@
         }
 
         /* Override the LinkedIn link color */
-        a.linkedin-first {
+        a[href*="linkedin.com"].first-link {
             color: #0077b5; /* LinkedIn blue color */
         }
 
-        a.linkedin-first:hover {
+        a[href*="linkedin.com"].first-link:hover {
             text-shadow: 0 0 10px rgba(0, 119, 181, 0.5); /* Blue hover shadow */
+        }
+
+        /* Style for the second LinkedIn link */
+        a[href*="linkedin.com"].second-link {
+            color: #ff0a54; /* Change this color as desired */
         }
 
         .small-text {
@@ -161,7 +166,7 @@
         <span class="highlight1">react</span>, html/css, python, and reviewing matcha lattes 🍵
     </p>
     <p>
-        incoming swe intern @ <a href="https://www.linkedin.com" target="_blank" class="highlight linkedin-first">linkedin</a> - summer 2025, previously interned at
+        incoming swe intern @ <a href="https://www.linkedin.com" target="_blank" class="highlight first-link">linkedin</a> - summer 2025, previously interned at
         <a href="https://www.amolino.ai" target="_blank" class="highlight">amolino ai</a> creating a tool to display specific client data.
     </p>
     <p>
@@ -172,10 +177,11 @@
         check out my technical projects on <a href="https://github.com/avnirao" class="highlight">github</a>.
         <p>
             if you'd like to get in touch, feel free to email me at
-            <a href="mailto:avnir@uw.edu" class="highlight">avnir@uw.edu</a> or
-            reach out via
-            <a href="https://www.linkedin.com/in/avni-rao/" target="_blank" class="highlight">linkedin</a>. always happy to chat 😊 
+        <a href="mailto:avnir@uw.edu" class="highlight">avnir@uw.edu</a> or
+        reach out via
+        <a href="https://www.linkedin.com/in/avni-rao/" target="_blank" class="highlight second-link">linkedin</a>. always happy to chat 😊 
         </p>
+      
     </p>
 </div>
 
