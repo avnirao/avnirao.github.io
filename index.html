@@ -10,9 +10,9 @@
                 Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #e0f7fa; /* Light blue for light mode */
             transition: background-color 0.3s ease, color 0.3s ease;
-            color: #001f3f; /* Dark blue for light mode */
+            color: #0d47a1; /* Darker blue for light mode text */
         }
 
         .content-wrapper {
@@ -22,7 +22,7 @@
         }
 
         h1 {
-            color: #ff0a54;
+            color: #01579b; /* Dark blue for headings */
             text-align: center;
             font-size: 2.8em;
             margin-bottom: 20px;
@@ -33,74 +33,74 @@
             margin-bottom: 20px;
             text-align: left;
             font-size: 1em;
-            color: #666; /* Slightly dark gray text */
+            color: #0277bd; /* Slightly darker blue for text */
         }
 
         .highlight1 {
             font-weight: bold;
-            color: #666; 
+            color: #0277bd; /* Same blue as text */
             text-decoration: none;
             transition: text-shadow 0.3s ease;
         }
 
         .highlight {
-            color: #ff0a54;
+            color: #0288d1; /* Lighter blue for highlights */
             font-weight: bold;
             text-decoration: none;
             transition: text-shadow 0.3s ease;
         }
 
         .highlight:hover {
-            text-shadow: 0 0 10px rgba(230, 62, 140, 0.5);
+            text-shadow: 0 0 10px rgba(2, 136, 209, 0.5);
         }
 
         a[href*="linkedin"] {
-            color: #0077b5; /* LinkedIn blue */
+            color: #01579b; /* Darker blue for LinkedIn links */
         }
 
         .small-text {
             text-align: center;
             font-size: 0.8em;
-            color: #222;
+            color: #0288d1;
             margin-top: 50px;
         }
 
         body.dark-mode {
-            background-color: #001f3f; /* Dark blue background */
-            color: #9dbfe6; /* Lightish blue text */
+            background-color: #0d47a1; /* Dark blue background for dark mode */
+            color: #b3e5fc; /* Light blue for text in dark mode */
         }
 
         body.dark-mode p {
-            color: #9dbfe6;
+            color: #b3e5fc; /* Light blue text */
         }
 
         body.dark-mode h1 {
-            color: #ff80ab;
+            color: #81d4fa; /* Lighter blue for headings in dark mode */
         }
 
         body.dark-mode .content-wrapper {
-            color: #9dbfe6;
+            color: #b3e5fc; /* Light blue for text in dark mode */
         }
 
         body.dark-mode .highlight1 {
-            color: #9dbfe6;
+            color: #b3e5fc;
         }
 
         body.dark-mode .highlight {
-            color: #ff80ab;
+            color: #81d4fa;
             font-weight: bold;
         }
 
         body.dark-mode .highlight:hover {
-            text-shadow: 0 0 10px rgba(230, 62, 140, 0.5);
+            text-shadow: 0 0 10px rgba(129, 212, 250, 0.5);
         }
 
         body.dark-mode .small-text {
-            color: #bfbdc1;
+            color: #b3e5fc;
         }
 
         .typing-animation::after {
-            color: #fff;
+            color: #01579b; /* Dark blue */
             animation: blink-caret 1.4s step-end infinite;
         }
 
@@ -121,9 +121,9 @@
         }
 
         .toggle-btn {
-            background-color: #fff;
-            color: #000;
-            border: 2px solid #ff0a54; 
+            background-color: #81d4fa; /* Lighter blue for button */
+            color: #0d47a1; /* Dark blue text */
+            border: 2px solid #0288d1; /* Blue border */
             padding: 8px 15px;
             border-radius: 5px;
             cursor: pointer;
@@ -131,7 +131,7 @@
         }
 
         .toggle-btn:hover {
-            background-color: #ff0a54;
+            background-color: #0288d1; /* Hover with slightly darker blue */
             color: #fff;
         }
 
@@ -195,14 +195,14 @@
         body.classList.toggle("dark-mode");
         if (body.classList.contains("dark-mode")) {
             document.querySelector(".toggle-btn").textContent = "light mode";
-            document.querySelector(".toggle-btn").style.backgroundColor = "#001f3f";
-            document.querySelector(".toggle-btn").style.color = "#9dbfe6";
-            document.querySelector(".toggle-btn").style.borderColor = "#9dbfe6";
+            document.querySelector(".toggle-btn").style.backgroundColor = "#0d47a1";
+            document.querySelector(".toggle-btn").style.color = "#b3e5fc";
+            document.querySelector(".toggle-btn").style.borderColor = "#b3e5fc";
         } else {
             document.querySelector(".toggle-btn").textContent = "dark mode";
-            document.querySelector(".toggle-btn").style.backgroundColor = "#fff";
-            document.querySelector(".toggle-btn").style.color = "#000";
-            document.querySelector(".toggle-btn").style.borderColor = "#ff0a54";
+            document.querySelector(".toggle-btn").style.backgroundColor = "#81d4fa";
+            document.querySelector(".toggle-btn").style.color = "#0d47a1";
+            document.querySelector(".toggle-btn").style.borderColor = "#0288d1";
         }
     }
 
