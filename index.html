@@ -1,232 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Avni Rao</title>
-    <link rel="icon" type="image/png" href="/Users/avnirao/avnirao.github.io/sparkling_heart.png">
+    <link rel="icon" href="sparkling_heart.ico" type="image/x-icon" />
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffff;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            color: #000;
-        }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+      }
 
-        .content-wrapper {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 0 30px;
-        }
+      .content-wrapper {
+        max-width: 750px;
+        margin: 50px auto;
+        padding: 0 30px;
+      }
 
-        h1 {
-            color: #ff0a54;
-            text-align: center;
-            font-size: 2.8em;
-            margin-bottom: 20px;
-        }
+      h1 {
+        color: #ff0a54;
+        text-align: center;
+        font-size: 2.8em;
+        margin-bottom: 20px;
+      }
 
-        p {
-            line-height: 1.6;
-            margin-bottom: 20px;
-            text-align: left;
-            font-size: 1em;
-            color: #666;
-        }
+      p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+        text-align: left;
+        font-size: 1em;
+        color: #666;
+      }
 
-        .highlight1 {
-            font-weight: bold;
-            color: #666; 
-            text-decoration: none;
-            transition: text-shadow 0.3s ease;
-        }
+      .highlight1 {
+        font-weight: bold;
+        color: #666;
+        text-decoration: none;
+        transition: text-shadow 0.3s ease;
+      }
 
-        .highlight {
-            color: #ff0a54;
-            font-weight: bold;
-            text-decoration: none;
-            transition: text-shadow 0.3s ease;
-        }
+      .highlight {
+        color: #ff0a54;
+        font-weight: bold;
+        text-decoration: none;
+        transition: text-shadow 0.3s ease;
+      }
 
-        .highlight:hover {
-            text-shadow: 0 0 10px rgba(230, 62, 140, 0.5);
-        }
+      .highlight:hover {
+        text-shadow: 0 0 10px rgba(230, 62, 140, 0.5);
+      }
 
-        a[href*="linkedin.com"].first-link {
-            color: #0077b5; 
-        }
+      a[href*="linkedin.com"].first-link {
+        color: #0077b5;
+      }
 
-        a[href*="linkedin.com"].first-link:hover {
-            text-shadow: 0 0 10px rgba(0, 119, 181, 0.5); 
-        }
+      a[href*="linkedin.com"].first-link:hover {
+        text-shadow: 0 0 10px rgba(0, 119, 181, 0.5);
+      }
 
-        /* Added styles for dark mode */
-        body.dark-mode a[href*="linkedin.com"].first-link {
-            color: #5ab6e8; /* Retain blue color in dark mode */
-        }
+      /* Added styles for dark mode */
+      body.dark-mode a[href*="linkedin.com"].first-link {
+        color: #5ab6e8; /* Retain blue color in dark mode */
+      }
 
-        body.dark-mode a[href*="linkedin.com"].first-link:hover {
-            text-shadow: 0 0 10px rgba(0, 119, 181, 0.5); /* Retain hover effect in dark mode */
-        }
+      body.dark-mode a[href*="linkedin.com"].first-link:hover {
+        text-shadow: 0 0 10px rgba(0, 119, 181, 0.5); /* Retain hover effect in dark mode */
+      }
 
-        a[href*="linkedin.com"].second-link {
-            color: #ff0a54; 
-        }
+      a[href*="linkedin.com"].second-link {
+        color: #ff0a54;
+      }
 
-        .small-text {
-            text-align: center;
-            font-size: 0.8em;
-            color: #222;
-            margin-top: 50px;
-        }
+      .small-text {
+        text-align: center;
+        font-size: 0.8em;
+        color: #222;
+        margin-top: 50px;
+      }
 
-        body.dark-mode p {
-            color: #f3e8ee;
-        }
-        body.dark-mode {
-            background-color: #222;
-            color: #f3e8ee;
-        }
+      body.dark-mode p {
+        color: #f3e8ee;
+      }
+      body.dark-mode {
+        background-color: #222;
+        color: #f3e8ee;
+      }
 
-        body.dark-mode h1 {
-            color: #ff80ab;
-        }
+      body.dark-mode h1 {
+        color: #ff80ab;
+      }
 
-        body.dark-mode .content-wrapper {
-            color: #f4f4f6;
-        }
+      body.dark-mode .content-wrapper {
+        color: #f4f4f6;
+      }
 
-        body.dark-mode .highlight1 {
-            color: #f4f4f6;
-        }
+      body.dark-mode .highlight1 {
+        color: #f4f4f6;
+      }
 
-        body.dark-mode .highlight {
-            color: #ff80ab;
-            font-weight: bold;
-        }
+      body.dark-mode .highlight {
+        color: #ff80ab;
+        font-weight: bold;
+      }
 
-        body.dark-mode .highlight:hover {
-            text-shadow: 0 0 10px rgba(230, 62, 140, 0.5);
-        }
+      body.dark-mode .highlight:hover {
+        text-shadow: 0 0 10px rgba(230, 62, 140, 0.5);
+      }
 
-        body.dark-mode .small-text {
-            color: #bfbdc1;
-        }
+      body.dark-mode .small-text {
+        color: #bfbdc1;
+      }
 
-        .typing-animation::after {
-            color: #fff;
-            animation: blink-caret 1.4s step-end infinite;
-        }
+      .typing-animation::after {
+        color: #fff;
+        animation: blink-caret 1.4s step-end infinite;
+      }
 
-        @keyframes blink-caret {
-            from,
-            to {
-                opacity: 1;
-            }
-            90% {
-                opacity: 0;
-            }
+      @keyframes blink-caret {
+        from,
+        to {
+          opacity: 1;
         }
+        90% {
+          opacity: 0;
+        }
+      }
 
-        .toggle-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+      .toggle-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
 
-        .toggle-btn {
-            background-color: #fff;
-            color: #000;
-            border: 2px solid #ff0a54; 
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
+      .toggle-btn {
+        background-color: #fff;
+        color: #000;
+        border: 2px solid #ff0a54;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          border-color 0.3s ease;
+      }
 
-        .toggle-btn:hover {
-            background-color: #ff0a54;
-            color: #fff;
-        }
+      .toggle-btn:hover {
+        background-color: #ff0a54;
+        color: #fff;
+      }
 
-        .toggle-btn:focus {
-            outline: none;
-        }
+      .toggle-btn:focus {
+        outline: none;
+      }
     </style>
-</head>
-<body>
-<div class="content-wrapper">
-    <h1>
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <h1>
         <span class="typing-animation"></span>
-    </h1>
-    <p>
+      </h1>
+      <p>
         i study
         <span class="highlight1">computer science 👩🏻‍💻 </span>
         at the
-        <span class="highlight1">university of washington</span>.
-        
-    </p>
-    <p>
-        my skills include <span class="highlight1">java</span>,
-        <span class="highlight1">react</span>, html/css, python, and reviewing matcha lattes 🍵
-    </p>
-    <p>
-        incoming swe intern @ <a href="https://www.linkedin.com" target="_blank" class="highlight first-link">linkedin</a> - summer 2025, previously interned at
-        <a href="https://www.amolino.ai" target="_blank" class="highlight">amolino ai</a> creating a tool to display specific client data.
-    </p>
-    <p>
-        i have attended <span><a target="_blank" class="highlight1">salesforce's tech summit, palantir's leadership retreat, </a></span><span class="highlight"><a target="_blank" class="highlight1">d.e. shaw's connect program</a></span>, and the <span class="highlight"><a href="https://ghc.anitab.org" target="_blank" class="highlight">grace hopper celebration</a></span>.
-    </p>
-    
-    <p>
-        check out my technical projects on <a href="https://github.com/avnirao" class="highlight">github</a>.
-        <p>
-            if you'd like to get in touch, feel free to email me at
+        <span class="highlight1">university of washington</span>. i love working
+        in <span class="highlight1">java</span>,
+        <span class="highlight1">react</span>, html/css, python, but enjoy
+        learning new languages/stacks 💌
+      </p>
+      <p>
+        in my free time, i like to hike, read lots of books, rewatch gilmore
+        girls, and review matcha lattes 🍵
+      </p>
+      <p>
+        incoming swe intern @
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          class="highlight first-link"
+          >linkedin</a
+        >
+        - summer 2025, previously interned at
+        <a href="https://www.amolino.ai" target="_blank" class="highlight"
+          >amolino ai</a
+        >
+        creating a tool to display specific client data.
+      </p>
+      <p>
+        i have attended
+        <span
+          ><a target="_blank" class="highlight1"
+            >salesforce's tech summit, palantir's leadership retreat,
+          </a></span
+        ><span class="highlight"
+          ><a target="_blank" class="highlight1"
+            >d.e. shaw's connect program</a
+          ></span
+        >, and the
+        <span class="highlight"
+          ><a href="https://ghc.anitab.org" target="_blank" class="highlight"
+            >grace hopper celebration</a
+          ></span
+        >.
+      </p>
+
+      <p>
+        if you'd like to get in touch, feel free to email me at
         <a href="mailto:avnir@uw.edu" class="highlight">avnir@uw.edu</a> or
         reach out via
-        <a href="https://www.linkedin.com/in/avni-rao/" target="_blank" class="highlight second-link">linkedin</a>. always happy to chat 😊 
-        </p>
-      
-    </p>
-</div>
+        <a
+          href="https://www.linkedin.com/in/avni-rao/"
+          target="_blank"
+          class="highlight second-link"
+          >linkedin</a
+        >. always happy to chat 😊
+      </p>
+    </div>
 
-<div class="toggle-container">
-    <button onclick="toggleDarkMode()" class="toggle-btn">dark mode</button>
-</div>
+    <div class="toggle-container">
+      <button onclick="toggleDarkMode()" class="toggle-btn">dark mode</button>
+    </div>
 
-<script>
-    const text = "hello, i'm avni";
-    const typingSpan = document.querySelector(".typing-animation");
-    let i = 0;
+    <script>
+      const text = "hello, i'm avni";
+      const typingSpan = document.querySelector(".typing-animation");
+      let i = 0;
 
-    function typeWriter() {
+      function typeWriter() {
         if (i < text.length) {
-            typingSpan.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, Math.random() + 90);
+          typingSpan.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, Math.random() + 90);
         }
-    }
+      }
 
-    function toggleDarkMode() {
+      function toggleDarkMode() {
         const body = document.body;
         body.classList.toggle("dark-mode");
         if (body.classList.contains("dark-mode")) {
-            document.querySelector(".toggle-btn").textContent = "light mode";
-            document.querySelector(".toggle-btn").style.backgroundColor = "#222";
-            document.querySelector(".toggle-btn").style.color = "#fff";
-            document.querySelector(".toggle-btn").style.borderColor = "#ff80ab";
+          document.querySelector(".toggle-btn").textContent = "light mode";
+          document.querySelector(".toggle-btn").style.backgroundColor = "#222";
+          document.querySelector(".toggle-btn").style.color = "#fff";
+          document.querySelector(".toggle-btn").style.borderColor = "#ff80ab";
         } else {
-            document.querySelector(".toggle-btn").textContent = "dark mode";
-            document.querySelector(".toggle-btn").style.backgroundColor = "#fff";
-            document.querySelector(".toggle-btn").style.color = "#000";
-            document.querySelector(".toggle-btn").style.borderColor = "#ff0a54";
+          document.querySelector(".toggle-btn").textContent = "dark mode";
+          document.querySelector(".toggle-btn").style.backgroundColor = "#fff";
+          document.querySelector(".toggle-btn").style.color = "#000";
+          document.querySelector(".toggle-btn").style.borderColor = "#ff0a54";
         }
-    }
+      }
 
-    typeWriter();
-</script>
-</body>
-</html>
+      typeWriter();
+    </script>
+  </body>
+</
