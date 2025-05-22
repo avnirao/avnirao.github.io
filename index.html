@@ -121,6 +121,26 @@
         animation: blink-caret 1.4s step-end infinite;
       }
 
+      .matcha-link {
+        color: #74a07d;
+        font-weight: bold;
+        text-decoration: none;
+        transition: text-shadow 0.3s ease;
+      }
+
+      .matcha-link:hover {
+        text-shadow: 0 0 10px rgba(139, 168, 136, 0.5);
+      }
+
+      body.dark-mode .matcha-link {
+        color: #b3e5b4; 
+      }
+
+      body.dark-mode .matcha-link:hover {
+        text-shadow: 0 0 10px rgba(179, 229, 180, 0.5);
+      }
+
+
       @keyframes blink-caret {
         from,
         to {
@@ -169,13 +189,13 @@
         at the
         <span class="highlight1">university of washington</span>. i love working
         in <span class="highlight1">java</span>,
-        <span class="highlight1">react</span>, html/css, python, but enjoy
+        <span class="highlight1">react</span>, c/c++, html/css, python, but enjoy
         learning new languages/stacks 💌
       </p>
       <p>
-        in my free time, i like to hike, read lots of books, rewatch gilmore
-        girls, and review matcha lattes 🍵
+        i ta cse 340: interaction programming and will be helping lead <a href="https://cseed.co" target="_blank" class="highlight">cseed</a> this year! 
       </p>
+
       <p>
         incoming swe intern @
         <a
@@ -206,6 +226,10 @@
             >grace hopper celebration</a
           ></span
         >.
+        <p>
+        in my free time, i like to hike, read lots of books, rewatch gilmore
+        girls, and <a href="https://matcha-ranking.vercel.app" target="_blank" class="matcha-link">review matcha lattes 🍵</a>
+      </p>
       </p>
 
       <p>
