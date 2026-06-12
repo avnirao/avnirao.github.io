@@ -37,6 +37,25 @@
         color: #666;
       }
 
+      .dropdown {
+        margin-bottom: 20px;
+      }
+
+      .dropdown summary {
+        color: #666;
+        cursor: pointer;
+        font-size: 1em;
+        line-height: 1.6;
+      }
+
+      .dropdown summary::marker {
+        color: #ff0a54;
+      }
+
+      .dropdown p {
+        margin: 14px 0 0 20px;
+      }
+
       .highlight1 {
         font-weight: bold;
         color: #666;
@@ -112,6 +131,14 @@
         text-shadow: 0 0 10px rgba(230, 62, 140, 0.5);
       }
 
+      body.dark-mode .dropdown summary {
+        color: #f3e8ee;
+      }
+
+      body.dark-mode .dropdown summary::marker {
+        color: #ff80ab;
+      }
+
       body.dark-mode .small-text {
         color: #bfbdc1;
       }
@@ -184,53 +211,68 @@
         <span class="typing-animation"></span>
       </h1>
       <p>
-        i study
-        <span class="highlight1">computer science 👩🏻‍💻 </span>
-        at the
-        <span class="highlight1">university of washington</span>. i love working
-        in <span class="highlight1">java</span>,
-        <span class="highlight1">react</span>, c/c++, html/css, python, but enjoy
-        learning new languages/stacks 💌
-      </p>
-      <p>
-        i ta cse 340: interaction programming and will be helping lead <a href="https://cseed.co" target="_blank" class="highlight">cseed</a> this year! 
-      </p>
-
-      <p>
-        i was a swe intern @
+        i'm a software engineer @
         <a
           href="https://www.linkedin.com"
           target="_blank"
           class="highlight first-link"
           >linkedin</a
-        >
-        - during summer 2025, previously interned at
-        <a href="https://www.amolino.ai" target="_blank" class="highlight"
-          >amolino ai</a
-        >
-        creating a tool to display specific client data.
+        >.
       </p>
       <p>
-        i have attended
-        <span
-          ><a target="_blank" class="highlight1"
-            >salesforce's tech summit, palantir's leadership retreat,
-          </a></span
-        ><span class="highlight"
-          ><a href="https://fellowships.deshaw.com" target="_blank" class="highlight"
-            >d.e. shaw's discovery fellowship program</a
-          ></span
-        >, d.e. shaw connect, the
-        <span class="highlight"
-          ><a href="https://ghc.anitab.org" target="_blank" class="highlight"
-            >grace hopper celebration</a
-          ></span
-        >, and 
-        <span class="highlight"><a href="https://reinvent.awsevents.com" target="_blank" class="highlight">aws re:invent 2025</a></span>.
+        i love working in <span class="highlight1">java</span>,
+        <span class="highlight1">react</span>, c/c++, html/css, python, but enjoy
+        learning new languages/stacks 💌 i love making fun little projects,
+        check them out
+        <a href="https://github.com/avnirao" target="_blank" class="highlight"
+          >here</a
+        >.
+      </p>
+      <details class="dropdown">
+        <summary>
+          at the <span class="highlight1">university of washington</span>, i
+          studied <span class="highlight1">computer science 👩🏻‍💻</span> at the
+          <a href="https://www.cs.washington.edu" target="_blank" class="highlight"
+            >paul g. allen school</a
+          >
+          and minored in
+          <a href="https://gwss.washington.edu" target="_blank" class="highlight"
+            >gender, women &amp; sexuality studies</a
+          >.
+        </summary>
         <p>
+          i was a teaching assistant for
+          <a
+            href="https://courses.cs.washington.edu/courses/cse340/"
+            target="_blank"
+            class="highlight"
+            >cse 340: interaction programming</a
+          >, co-president of
+          <a href="https://cseed.co" target="_blank" class="highlight">cseed</a>,
+          and an entrepreneur in residence for
+          <a href="https://next.dubhacks.co" target="_blank" class="highlight"
+            >dubhacks next</a
+          >.
+        </p>
+        <p>
+          i have attended
+          <span class="highlight1"
+            >salesforce's tech summit, palantir's leadership retreat</span
+          >,
+          <a href="https://fellowships.deshaw.com" target="_blank" class="highlight"
+            >d.e. shaw's discovery fellowship program</a
+          >, d.e. shaw connect, the
+          <a href="https://ghc.anitab.org" target="_blank" class="highlight"
+            >grace hopper celebration</a
+          >, and
+          <a href="https://reinvent.awsevents.com" target="_blank" class="highlight"
+            >aws re:invent 2025</a
+          >.
+        </p>
+      </details>
+      <p>
         in my free time, i like to hike, read lots of books, rewatch gilmore
         girls, and <a href="https://matcha-ranking.vercel.app" target="_blank" class="matcha-link">review matcha lattes 🍵</a>
-      </p>
       </p>
 
       <p>
