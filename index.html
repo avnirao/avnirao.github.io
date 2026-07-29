@@ -167,6 +167,20 @@
         text-shadow: 0 0 10px rgba(179, 229, 180, 0.5);
       }
 
+      .gilmore-link {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .gilmore-link:hover {
+        color: #8b5e3c;
+      }
+
+      body.dark-mode .gilmore-link:hover {
+        color: #f1d4a8;
+      }
+
 
       @keyframes blink-caret {
         from,
@@ -271,8 +285,13 @@
         </p>
       </details>
       <p>
-        in my free time, i like to hike, read lots of books, rewatch gilmore
-        girls, and <a href="https://matcha-ranking.vercel.app" target="_blank" class="matcha-link">review matcha lattes 🍵</a>
+        in my free time, i like to hike, read lots of books,
+        <a
+          href="https://gilmore-girls-tonight.vercel.app"
+          target="_blank"
+          class="gilmore-link"
+          >rewatch gilmore girls</a
+        >, and <a href="https://matcha-ranking.vercel.app" target="_blank" class="matcha-link">review matcha lattes 🍵</a>
       </p>
 
       <p>
