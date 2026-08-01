@@ -107,8 +107,8 @@ const links = [
 /* --- hanging pull-chain lamp with pendulum physics --- */
 // The bulb hangs from a central ceiling pivot; the pull-chain hangs
 // from its own side pivot so the two swing as separate pendulums.
-const BULB_PIVOT_X = 96;
-const CHAIN_PIVOT_X = 150;
+const BULB_PIVOT_X = 130;
+const CHAIN_PIVOT_X = 165;
 const SCREW_CENTER_Y = 92; // y-coordinate of bulb screw-base center when vertical
 const BULB_TOP_Y = SCREW_CENTER_Y - 5; // top edge of the bulb glyph
 const SCREW_CENTER_R = BULB_TOP_Y - 4; // chain stops at the bulb's screw base
@@ -118,7 +118,9 @@ function LightsToggle() {
   const [dark, setDark] = useState(false);
   const bulbRef = useRef<HTMLDivElement>(null);
   const beadRef = useRef<SVGCircleElement>(null);
+  const touchRef = useRef<SVGCircleElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
+  const chainTouchRef = useRef<SVGPathElement>(null);
   const glowRef = useRef<SVGCircleElement>(null);
   const bulbCordRef = useRef<SVGPathElement>(null);
 
@@ -160,12 +162,13 @@ function LightsToggle() {
       const midX = CHAIN_PIVOT_X + Math.sin(s.theta) * len * 0.5;
       const sagX = midX - Math.sin(s.theta) * 8;
       const sagY = by * 0.5 + 2 + 10;
-      pathRef.current?.setAttribute(
-        "d",
-        `M ${CHAIN_PIVOT_X} 4 Q ${sagX} ${sagY} ${bx} ${by}`
-      );
+      const chainD = `M ${CHAIN_PIVOT_X} 4 Q ${sagX} ${sagY} ${bx} ${by}`;
+      pathRef.current?.setAttribute("d", chainD);
+      chainTouchRef.current?.setAttribute("d", chainD);
       beadRef.current?.setAttribute("cx", String(bx));
       beadRef.current?.setAttribute("cy", String(by));
+      touchRef.current?.setAttribute("cx", String(bx));
+      touchRef.current?.setAttribute("cy", String(by));
       glowRef.current?.setAttribute("cx", String(bx));
       glowRef.current?.setAttribute("cy", String(by));
       // bulb's own chain, drawn with the same bead links and a slight sag
@@ -276,18 +279,18 @@ function LightsToggle() {
     const s = sim.current;
     s.pull = 90;
     s.pullV = -120;
-    s.omega = 0.7;
+    s.omega = -0.7;
     setDark((d) => !d);
   };
 
   return (
-    <div className="pointer-events-none fixed right-0 top-0 z-30 sm:right-10">
-      <svg width={220} height={400} viewBox="0 0 220 400" className="select-none overflow-visible">
+    <div className="pointer-events-none absolute top-full right-0 z-30">
+      <svg width={200} height={400} viewBox="0 0 200 400" className="select-none overflow-visible">
         {/* ceiling mount bar spanning both pivots */}
         <rect
-          x={BULB_PIVOT_X - 12}
+          x={Math.min(BULB_PIVOT_X, CHAIN_PIVOT_X) - 12}
           y={0}
-          width={CHAIN_PIVOT_X - BULB_PIVOT_X + 24}
+          width={Math.abs(BULB_PIVOT_X - CHAIN_PIVOT_X) + 24}
           height={5}
           rx={2}
           className="fill-border"
@@ -312,6 +315,16 @@ function LightsToggle() {
           strokeLinecap="round"
           className="stroke-muted-foreground/70"
         />
+        {/* wide invisible tap target along the chain */}
+        <path
+          ref={chainTouchRef}
+          d=""
+          fill="none"
+          strokeWidth={26}
+          strokeLinecap="round"
+          className="pointer-events-auto cursor-pointer stroke-transparent"
+          onClick={() => yank()}
+        />
         <circle ref={glowRef} r={16} className="fill-transparent" />
         <circle
           ref={beadRef}
@@ -332,6 +345,18 @@ function LightsToggle() {
             }
           }}
         />
+        {/* larger invisible thumb target for the bead */}
+        <circle
+          ref={touchRef}
+          r={24}
+          className="pointer-events-auto cursor-grab fill-transparent active:cursor-grabbing"
+          style={{ touchAction: "none" }}
+          aria-hidden="true"
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={release}
+          onPointerCancel={release}
+        />
       </svg>
 
       {/* bulb assembly, pivots from the ceiling */}
@@ -340,7 +365,7 @@ function LightsToggle() {
         className="absolute left-0 top-0 will-change-transform"
         style={{
           transformOrigin: `${BULB_PIVOT_X}px 4px`,
-          width: 220,
+          width: 200,
           height: 300,
         }}
       >
@@ -403,10 +428,10 @@ function Index() {
     <main className="min-h-screen bg-background text-foreground">
       <div className="mx-auto w-full max-w-4xl px-6 pb-16 sm:px-10">
         <div className="relative">
-          <header className="flex items-baseline justify-between gap-4 border-b border-border/30 py-4 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
+          <header className="relative flex items-baseline justify-between gap-4 border-b border-border/30 py-4 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
             <span>seattle 47.61°n → the bay area 37.77°n</span>
+            <LightsToggle />
           </header>
-          <LightsToggle />
         </div>
 
 
